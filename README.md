@@ -7,6 +7,8 @@ req: {
   email: letters, digits, . and @
   
   password: 8-48 symbols
+
+  passwordRepeat: 8-48 symbols
   
   phoneNumber: only + and numbers
   
@@ -59,6 +61,20 @@ POST /api/auth/restore-password
 req: {
 
   email: letters, digits, . and @
+  
+}
+
+res: message
+
+# 6 update password
+
+PATCH /api/auth/restore-password/:restorePasswordToken
+
+req: {
+
+  password: 8-48 symbols
+
+  passwordRepeat: 8-48 symbols
   
 }
 
