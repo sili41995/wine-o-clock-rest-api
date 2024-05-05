@@ -26,6 +26,10 @@ export interface IRequest extends Request {
   user?: IUser;
 }
 
+export interface IAuthRequest extends IRequest {
+  body: IUser;
+}
+
 export interface IDecodedToken {
   id: string;
 }
