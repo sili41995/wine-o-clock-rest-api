@@ -4,6 +4,7 @@ const enum Messages {
   dbConnectSuccess = 'Database connection successful',
   firstNameReqErr = 'Missing required first name field',
   lastNameReqErr = 'Missing required last name field',
+  restorePassMsg='Password recovery email sent',
   // taskRequiredErr = 'Missing required task field',
   // deadlineRequiredErr = 'Missing required deadline field',
   // missingFileErr = 'File is absent',

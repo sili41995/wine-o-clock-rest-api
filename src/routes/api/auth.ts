@@ -2,13 +2,15 @@ import express from 'express';
 import {
   signUp,
   signIn,
-    signOut,
-    current,
+  signOut,
+  current,
+  restorePassword,
 } from '../../controllers/auth';
 import { validateBody, authenticate } from '../../middlewares';
 import {
   signUpSchema,
   signInSchema,
+  restorePasswordSchema,
 } from '../../models/user';
 import { validBodySchema } from '../../schemas';
 import { Endpoints, ProfileSettings } from '../../constants';
@@ -29,5 +31,15 @@ router.post(
 );
 router.post(Endpoints.signout, authenticate, signOut);
 router.get(Endpoints.current, authenticate, current);
+router.post(
+  Endpoints.restorePass,
+  validateBody(restorePasswordSchema),
+  restorePassword
+);
+// router.patch(
+//   '/restore-password/:restorePasswordToken',
+//   validateBody(updatePasswordSchema),
+//   updatePassword
+// );
 
 export default router;

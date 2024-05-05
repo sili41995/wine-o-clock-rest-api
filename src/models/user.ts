@@ -94,6 +94,10 @@ const signInSchema = Joi.object({
   password: passwordSettings.required(),
 });
 
+const restorePasswordSchema = Joi.object({
+  email: emailSettings.required(),
+});
+
 const User = model<IUser>(ModelNames.user, userSchema);
 
-export { User, signUpSchema, signInSchema };
+export { User, signUpSchema, signInSchema, restorePasswordSchema };

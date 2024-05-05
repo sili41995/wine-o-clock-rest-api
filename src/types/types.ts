@@ -14,6 +14,7 @@ export interface IUser {
   firstName: string;
   lastName: string;
   token: string | null | undefined;
+  restorePasswordToken: string | null | undefined;
 }
 
 export interface IRegExp {
@@ -32,4 +33,9 @@ export interface IAuthRequest extends IRequest {
 
 export interface IDecodedToken {
   id: string;
+}
+
+export interface ISendEmailProps {
+  userEmail: string;
+  token: string;
 }
