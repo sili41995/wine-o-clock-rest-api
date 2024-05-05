@@ -20,7 +20,7 @@ req: {
 
 res: user info
 
-# 2 signIn
+### 2 signIn
 
 POST /api/auth/signin
 
