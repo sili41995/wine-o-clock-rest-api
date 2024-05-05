@@ -16,11 +16,9 @@ POST /api/auth/signup
   
 }
 
-
-
 # 2 signIn
 
-POST /api/auth/signup
+POST /api/auth/signin
 
 {
 
@@ -28,10 +26,16 @@ POST /api/auth/signup
   
   password: 8-48 symbols
   
-  phoneNumber: only + and numbers
-  
-  firstName: string
-  
-  lastName: string
-  
 }
+
+# 3 signOut PRIVATE
+
+POST /api/auth/signout
+
+JWT in header Authorization
+
+# 4 current PRIVATE
+
+POST /api/auth/current
+
+JWT in header Authorization
