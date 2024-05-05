@@ -1,4 +1,4 @@
-1 signUp
+# 1 signUp
 
 POST /api/auth/signup
 
@@ -18,7 +18,7 @@ POST /api/auth/signup
 
 
 
-2 signIn
+# 2 signIn
 
 POST /api/auth/signup
 
