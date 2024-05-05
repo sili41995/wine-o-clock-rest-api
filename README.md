@@ -51,3 +51,15 @@ JWT in header Authorization
 req: empty body
 
 res: user info
+
+# 5 restore password
+
+POST /api/auth/restore-password
+
+req: {
+
+  email: letters, digits, . and @
+  
+}
+
+res: message
