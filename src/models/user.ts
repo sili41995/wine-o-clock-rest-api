@@ -36,6 +36,10 @@ const userSchema = new Schema<IUser>(
       type: String,
       default: null,
     },
+    restorePasswordToken: {
+      type: String,
+      default: null,
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -98,6 +102,17 @@ const restorePasswordSchema = Joi.object({
   email: emailSettings.required(),
 });
 
+const updatePasswordSchema = Joi.object({
+  password: passwordSettings.required(),
+  passwordRepeat: passwordRepeatSettings.required(),
+});
+
 const User = model<IUser>(ModelNames.user, userSchema);
 
-export { User, signUpSchema, signInSchema, restorePasswordSchema };
+export {
+  User,
+  signUpSchema,
+  signInSchema,
+  restorePasswordSchema,
+  updatePasswordSchema,
+};

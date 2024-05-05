@@ -5,15 +5,17 @@ import {
   signOut,
   current,
   restorePassword,
+  updatePassword,
 } from '../../controllers/auth';
 import { validateBody, authenticate } from '../../middlewares';
 import {
   signUpSchema,
   signInSchema,
   restorePasswordSchema,
+  updatePasswordSchema,
 } from '../../models/user';
 import { validBodySchema } from '../../schemas';
-import { Endpoints, ProfileSettings } from '../../constants';
+import { Endpoints } from '../../constants';
 
 const router = express.Router();
 
@@ -36,10 +38,10 @@ router.post(
   validateBody(restorePasswordSchema),
   restorePassword
 );
-// router.patch(
-//   '/restore-password/:restorePasswordToken',
-//   validateBody(updatePasswordSchema),
-//   updatePassword
-// );
+router.patch(
+  Endpoints.updatePass,
+  validateBody(updatePasswordSchema),
+  updatePassword
+);
 
 export default router;

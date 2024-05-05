@@ -5,6 +5,7 @@ const enum Messages {
   firstNameReqErr = 'Missing required first name field',
   lastNameReqErr = 'Missing required last name field',
   restorePassMsg='Password recovery email sent',
+  passwordUpdated='Password updated successfully',
   // taskRequiredErr = 'Missing required task field',
   // deadlineRequiredErr = 'Missing required deadline field',
   // missingFileErr = 'File is absent',
