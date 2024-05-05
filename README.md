@@ -1,4 +1,4 @@
-# 1 signUp
+## 1 signUp
 
 POST /api/auth/signup
 
