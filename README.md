@@ -36,6 +36,6 @@ JWT in header Authorization
 
 # 4 current PRIVATE
 
-POST /api/auth/current
+GET /api/auth/current
 
 JWT in header Authorization
