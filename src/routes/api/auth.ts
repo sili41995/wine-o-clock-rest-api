@@ -4,14 +4,11 @@ import {
   signIn,
     signOut,
     current,
-  //   updateAvatar,
-  //   updateProfile,
 } from '../../controllers/auth';
 import { validateBody, authenticate } from '../../middlewares';
 import {
   signUpSchema,
   signInSchema,
-  //   updateProfileSchema,
 } from '../../models/user';
 import { validBodySchema } from '../../schemas';
 import { Endpoints, ProfileSettings } from '../../constants';
@@ -32,17 +29,5 @@ router.post(
 );
 router.post(Endpoints.signout, authenticate, signOut);
 router.get(Endpoints.current, authenticate, current);
-// router.put(
-//   Endpoints.profile,
-//   authenticate,
-//   validateBody(updateProfileSchema),
-//   updateProfile
-// );
-// router.patch(
-//   Endpoints.avatars,
-//   authenticate,
-//   upload.single(ProfileSettings.imgField),
-//   updateAvatar
-// );
 
 export default router;
