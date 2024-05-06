@@ -39,3 +39,55 @@ export interface ISendEmailProps {
   userEmail: string;
   token: string;
 }
+
+export interface IComment {
+  owner: ObjectId;
+  comment: string;
+}
+
+export type Comments = IComment[];
+
+export interface IProduct {
+  title: string;
+  price: number;
+  adminDiscountPercentage: number;
+  description: string;
+  quantity: number;
+  bottleCapacity: number;
+  alcohol: number;
+  isNewCollection: boolean;
+  isBestSeller: boolean;
+  isSale: boolean;
+  isWineTimePromotion: boolean;
+  winemaking: string;
+  grapeVarieties: string;
+  tastingNotes: string;
+  storeAndServeAdvices: string;
+  foodPairing: string;
+  reviewsAndAwards: string;
+  wineColor: string;
+  sugarConsistency: string;
+  country: string;
+  region: string;
+  evaluation: number;
+  comments: Comments;
+  bottlesSoldCounter: number;
+  imageUrl: string;
+}
+
+export interface IGetFindFilterProps {
+  page?: string;
+  limit?: string;
+  title?: string;
+}
+
+export interface IFindFilter {
+  skip: number;
+  limit: number;
+  findFilter: {
+    title: {
+      $regex: string;
+      $options: string;
+    };
+  };
+}

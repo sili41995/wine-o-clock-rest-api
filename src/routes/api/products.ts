@@ -1,12 +1,5 @@
 import express from 'express';
-// import {
-//   signUp,
-//   signIn,
-//   signOut,
-//   current,
-//   updateAvatar,
-//   updateProfile,
-// } from '../../controllers/auth';
+import { getAll } from '../../controllers/products';
 // import { validateBody, authenticate, upload } from '../../middlewares';
 // import {
 //   signUpSchema,
@@ -14,17 +7,11 @@ import express from 'express';
 //   updateProfileSchema,
 // } from '../../models/user';
 // import { validBodySchema } from '../../schemas';
-// import { Endpoints, ProfileSettings } from '../../constants';
+import { Endpoints, ProfileSettings } from '../../constants';
 
 const router = express.Router();
 
-// router.post(
-//   Endpoints.signup,
-//   upload.single(ProfileSettings.imgField),
-//   validateBody(validBodySchema),
-//   validateBody(signUpSchema),
-//   signUp
-// );
+router.get(Endpoints.root, getAll);
 // router.post(
 //   Endpoints.signin,
 //   validateBody(validBodySchema),
