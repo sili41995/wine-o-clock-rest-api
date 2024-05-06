@@ -79,3 +79,74 @@ req: {
 }
 
 res: message
+
+### 7 get allProducts
+
+GET /api/products
+
+queries: {
+
+page: string,
+
+limit: string,
+
+title: string
+
+}
+
+res: {
+products: arrey of {
+
+  title: string;
+  
+  price: number;
+  
+  adminDiscountPercentage: number;
+  
+  description: string;
+  
+  quantity: number;
+  
+  bottleCapacity: number;
+  
+  alcohol: number;
+  
+  isNewCollection: boolean;
+  
+  isBestSeller: boolean;
+  
+  isSale: boolean;
+  
+  isWineTimePromotion: boolean;
+  
+  winemaking: string;
+  
+  grapeVarieties: string;
+  
+  tastingNotes: string;
+  
+  storeAndServeAdvices: string;
+  
+  foodPairing: string;
+  
+  reviewsAndAwards: string;
+  
+  wineColor: string;
+  
+  sugarConsistency: string;
+  
+  country: string;
+  
+  region: string;
+  
+  evaluation: number;
+  
+  comments: [];
+  
+  bottlesSoldCounter: number;
+  
+  imageUrl: string;
+  
+},
+
+count: number
