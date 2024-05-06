@@ -95,6 +95,7 @@ title: string
 }
 
 res: {
+
 products: arrey of {
 
   title: string;
@@ -150,3 +151,5 @@ products: arrey of {
 },
 
 count: number
+
+}
