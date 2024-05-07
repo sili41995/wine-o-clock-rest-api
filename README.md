@@ -96,7 +96,9 @@ title: string
 
 res: {
 
-products: arrey of {
+products: array of {
+
+  _id: string;
 
   title: string;
   
