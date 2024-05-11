@@ -1,6 +1,9 @@
 import express from 'express';
-import { getAll } from '../../controllers/products';
-// import { validateBody, authenticate, upload } from '../../middlewares';
+import { getAll, getById } from '../../controllers/products';
+import {
+  isValidId,
+  // validateBody, authenticate, upload
+} from '../../middlewares';
 // import {
 //   signUpSchema,
 //   signInSchema,
@@ -12,6 +15,7 @@ import { Endpoints, ProfileSettings } from '../../constants';
 const router = express.Router();
 
 router.get(Endpoints.root, getAll);
+router.get(`${Endpoints.root}:${Endpoints.dynamicId}`, isValidId, getById);
 // router.post(
 //   Endpoints.signin,
 //   validateBody(validBodySchema),
