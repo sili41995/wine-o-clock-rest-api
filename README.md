@@ -4,18 +4,18 @@ POST /api/auth/signup
 
 req: {
 
-  email: letters, digits, . and @
-  
-  password: 8-48 symbols
+email: letters, digits, . and @
 
-  passwordRepeat: 8-48 symbols
-  
-  phoneNumber: only + and numbers
-  
-  firstName: string
-  
-  lastName: string
-  
+password: 8-48 symbols
+
+passwordRepeat: 8-48 symbols
+
+phoneNumber: only + and numbers
+
+firstName: string
+
+lastName: string
+
 }
 
 res: user info
@@ -26,10 +26,10 @@ POST /api/auth/signin
 
 req: {
 
-  email: letters, digits, . and @
-  
-  password: 8-48 symbols
-  
+email: letters, digits, . and @
+
+password: 8-48 symbols
+
 }
 
 res: user info
@@ -60,8 +60,8 @@ POST /api/auth/restore-password
 
 req: {
 
-  email: letters, digits, . and @
-  
+email: letters, digits, . and @
+
 }
 
 res: message
@@ -72,10 +72,10 @@ PATCH /api/auth/restore-password/:restorePasswordToken
 
 req: {
 
-  password: 8-48 symbols
+password: 8-48 symbols
 
-  passwordRepeat: 8-48 symbols
-  
+passwordRepeat: 8-48 symbols
+
 }
 
 res: message
@@ -98,60 +98,66 @@ res: {
 
 products: array of {
 
-  _id: string;
+_id: string;
 
-  title: string;
-  
-  price: number;
-  
-  adminDiscountPercentage: number;
-  
-  description: string;
-  
-  quantity: number;
-  
-  bottleCapacity: number;
-  
-  alcohol: number;
-  
-  isNewCollection: boolean;
-  
-  isBestSeller: boolean;
-  
-  isSale: boolean;
-  
-  isWineTimePromotion: boolean;
-  
-  winemaking: string;
-  
-  grapeVarieties: string;
-  
-  tastingNotes: string;
-  
-  storeAndServeAdvices: string;
-  
-  foodPairing: string;
-  
-  reviewsAndAwards: string;
-  
-  wineColor: string;
-  
-  sugarConsistency: string;
-  
-  country: string;
-  
-  region: string;
-  
-  evaluation: number;
-  
-  comments: [];
-  
-  bottlesSoldCounter: number;
-  
-  imageUrl: string;
-  
+title: string;
+
+price: number;
+
+adminDiscountPercentage: number;
+
+description: string;
+
+quantity: number;
+
+bottleCapacity: number;
+
+alcohol: number;
+
+isNewCollection: boolean;
+
+isBestSeller: boolean;
+
+isSale: boolean;
+
+isWineTimePromotion: boolean;
+
+winemaking: string;
+
+grapeVarieties: string;
+
+tastingNotes: string;
+
+storeAndServeAdvices: string;
+
+foodPairing: string;
+
+reviewsAndAwards: string;
+
+wineColor: string;
+
+sugarConsistency: string;
+
+country: string;
+
+region: string;
+
+evaluation: number;
+
+comments: [];
+
+bottlesSoldCounter: number;
+
+imageUrl: string;
+
 },
 
 count: number
 
 }
+
+### 8 get productById
+
+GET /api/products/{productId}
+
+res: {productData}
