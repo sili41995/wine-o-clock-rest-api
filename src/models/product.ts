@@ -50,30 +50,6 @@ const productSchema = new Schema<IProduct>(
       type: Boolean,
       default: false,
     },
-    winemaking: {
-      type: String,
-      required: [true, Messages.winemakingReqErr],
-    },
-    grapeVarieties: {
-      type: String,
-      required: [true, Messages.grapeVarietiesReqErr],
-    },
-    tastingNotes: {
-      type: String,
-      required: [true, Messages.tastingNotesReqErr],
-    },
-    storeAndServeAdvices: {
-      type: String,
-      required: [true, Messages.storeAndServeAdvicesReqErr],
-    },
-    foodPairing: {
-      type: String,
-      required: [true, Messages.foodPairingReqErr],
-    },
-    reviewsAndAwards: {
-      type: String,
-      required: [true, Messages.reviewsAndAwardsReqErr],
-    },
     wineColor: {
       type: String,
       required: [true, Messages.wineColorReqErr],
