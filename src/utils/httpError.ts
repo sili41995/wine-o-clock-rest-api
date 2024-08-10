@@ -9,10 +9,7 @@ const errorMessageList: { [key: number]: string } = {
   500: 'Server error',
 };
 
-const httpError = ({
-  status = 500,
-  message = errorMessageList[status],
-}: IHttpError): IHttpError => {
+const httpError = ({ status = 500, message = errorMessageList[status] }: IHttpError): IHttpError => {
   const error = new Error(message) as Error & IHttpError;
   error.status = status;
 

@@ -15,6 +15,7 @@ export interface IUser {
   lastName: string;
   token: string | null | undefined;
   restorePasswordToken: string | null | undefined;
+  favorites: string[];
 }
 
 export interface IRegExp {
@@ -59,12 +60,6 @@ export interface IProduct {
   isBestSeller: boolean;
   isSale: boolean;
   isWineTimePromotion: boolean;
-  winemaking: string;
-  grapeVarieties: string;
-  tastingNotes: string;
-  storeAndServeAdvices: string;
-  foodPairing: string;
-  reviewsAndAwards: string;
   wineColor: string;
   sugarConsistency: string;
   country: string;
@@ -90,4 +85,12 @@ export interface IFindFilter {
       $options: string;
     };
   };
+}
+
+export interface IProductId {
+  productId: string;
+}
+
+export interface IFavoritesRequest extends IRequest {
+  body: IProductId;
 }

@@ -40,6 +40,10 @@ const userSchema = new Schema<IUser>(
       type: String,
       default: null,
     },
+    favorites: {
+      type: [String],
+      default: [],
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -53,23 +57,17 @@ const emailSettings = Joi.string().pattern(regExp.email).messages({
   'string.pattern.base': Messages.emailRegExpErr,
 });
 
-const passwordSettings = Joi.string()
-  .pattern(regExp.notEmptyValue)
-  .min(ProfileSettings.passMinLength)
-  .max(ProfileSettings.passMaxLength)
-  .messages({
-    'any.required': Messages.passwordReqErr,
-    'string.min': Messages.passwordMinLengthErr,
-    'string.max': Messages.passwordMaxLengthErr,
-    'string.pattern.base': Messages.emptyStringErr,
-  });
+const passwordSettings = Joi.string().pattern(regExp.notEmptyValue).min(ProfileSettings.passMinLength).max(ProfileSettings.passMaxLength).messages({
+  'any.required': Messages.passwordReqErr,
+  'string.min': Messages.passwordMinLengthErr,
+  'string.max': Messages.passwordMaxLengthErr,
+  'string.pattern.base': Messages.emptyStringErr,
+});
 
-const passwordRepeatSettings = Joi.string()
-  .valid(Joi.ref('password'))
-  .messages({
-    'any.required': Messages.passwordRepeatReqErr,
-    'any.only': Messages.passwordRepeatErr,
-  });
+const passwordRepeatSettings = Joi.string().valid(Joi.ref('password')).messages({
+  'any.required': Messages.passwordRepeatReqErr,
+  'any.only': Messages.passwordRepeatErr,
+});
 
 const firstNameSettings = Joi.string().messages({
   'any.required': Messages.firstNameReqErr,
@@ -109,10 +107,4 @@ const updatePasswordSchema = Joi.object({
 
 const User = model<IUser>(ModelNames.user, userSchema);
 
-export {
-  User,
-  signUpSchema,
-  signInSchema,
-  restorePasswordSchema,
-  updatePasswordSchema,
-};
+export { User, signUpSchema, signInSchema, restorePasswordSchema, updatePasswordSchema };

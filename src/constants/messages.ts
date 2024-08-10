@@ -37,6 +37,10 @@ const enum Messages {
   evaluationReqErr = 'Missing required evaluation field',
   bottlesSoldCounterReqErr = 'Missing required bottles sold counter field',
   commentReqErr = 'Missing required comment field',
+  productIdReqErr = 'Missing required product id field',
+  productIdLengthErr = 'Product id length must be 24 characters long',
+  userNotFoundErr = 'User not found',
+  isAlreadyFavoriteProductErr = 'Product is already in favorites list',
 }
 
 export default Messages;
