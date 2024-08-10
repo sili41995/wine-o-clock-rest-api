@@ -161,3 +161,21 @@ count: number
 GET /api/products/{productId}
 
 res: {productData}
+
+### 9 add favotiteProduct
+
+POST /api/favorites
+
+req: {
+
+productId: 24 symbols
+
+}
+
+res: string[]
+
+### 10 delete favotiteProduct
+
+DELETE /api/favorites/:id
+
+res: string[]
