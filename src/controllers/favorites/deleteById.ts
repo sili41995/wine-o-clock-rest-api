@@ -18,6 +18,12 @@ const deleteById = async (req: IRequest, res: Response, next: NextFunction): Pro
     throw httpError({ status: 404, message: Messages.userNotFoundErr });
   }
 
+  const isFavoriteProduct = user.favorites.includes(productId);
+
+  if (!isFavoriteProduct) {
+    throw httpError({ status: 404, message: Messages.productNotFoundErr });
+  }
+
   const updatedFavoritesProducts = [...user.favorites].filter((id) => id !== productId);
 
   const result = await User.findOneAndUpdate({ _id }, { favorites: updatedFavoritesProducts });
@@ -26,7 +32,7 @@ const deleteById = async (req: IRequest, res: Response, next: NextFunction): Pro
     throw httpError({ status: 404 });
   }
 
-  res.status(200).json(result);
+  res.status(200).json(result.favorites);
 };
 
 export default ctrlWrapper<IRequest>(deleteById);

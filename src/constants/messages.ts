@@ -41,6 +41,7 @@ const enum Messages {
   productIdLengthErr = 'Product id length must be 24 characters long',
   userNotFoundErr = 'User not found',
   isAlreadyFavoriteProductErr = 'Product is already in favorites list',
+  productNotFoundErr = 'Product not found',
 }
 
 export default Messages;
