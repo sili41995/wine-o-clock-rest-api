@@ -179,3 +179,9 @@ res: string[]
 DELETE /api/favorites/:id
 
 res: string[]
+
+### 11 get allFavorites
+
+GET /api/favorites
+
+res: string[]
