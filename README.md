@@ -2,37 +2,45 @@
 
 POST /api/auth/signup
 
-req: {
+req:
 
-email: letters, digits, . and @
+    {
 
-password: 8-48 symbols
+    email: letters, digits, . and @
 
-passwordRepeat: 8-48 symbols
+    password: 8-48 symbols
 
-phoneNumber: only + and numbers
+    passwordRepeat: 8-48 symbols
 
-firstName: string
+    phoneNumber: only + and numbers
 
-lastName: string
+    firstName: string
 
-}
+    lastName: string
 
-res: user info
+    }
+
+res:
+
+    user info
 
 ### 2 signIn
 
 POST /api/auth/signin
 
-req: {
+req:
 
-email: letters, digits, . and @
+    {
 
-password: 8-48 symbols
+    email: letters, digits, . and @
 
-}
+    password: 8-48 symbols
 
-res: user info
+    }
+
+res:
+
+    user info
 
 ### 3 signOut PRIVATE
 
@@ -40,9 +48,13 @@ POST /api/auth/signout
 
 JWT in header Authorization
 
-req: empty body
+req:
 
-res: empty body
+    empty body
+
+res:
+
+    empty body
 
 ### 4 current PRIVATE
 
@@ -50,135 +62,161 @@ GET /api/auth/current
 
 JWT in header Authorization
 
-req: empty body
+req:
 
-res: user info
+    empty body
+
+res:
+
+    user info
 
 ### 5 restore password
 
 POST /api/auth/restore-password
 
-req: {
+req:
 
-email: letters, digits, . and @
+    {
 
-}
+    email: letters, digits, . and @
 
-res: message
+    }
+
+res:
+
+    message
 
 ### 6 update password
 
 PATCH /api/auth/restore-password/:restorePasswordToken
 
-req: {
+req:
 
-password: 8-48 symbols
+    {
 
-passwordRepeat: 8-48 symbols
+    password: 8-48 symbols
 
-}
+    passwordRepeat: 8-48 symbols
 
-res: message
+    }
+
+res:
+
+    message
 
 ### 7 get allProducts
 
 GET /api/products
 
-queries: {
+queries:
 
-page: string,
+    {
 
-limit: string,
+    page: string,
 
-title: string
+    limit: string,
 
-}
+    title: string
 
-res: {
+    }
 
-products: array of {
+res:
 
-\_id: string;
+    {
 
-title: string;
+    products:
 
-price: number;
+    {
 
-adminDiscountPercentage: number;
+    id: string;
 
-description: string;
+    title: string;
 
-quantity: number;
+    price: number;
 
-bottleCapacity: number;
+    adminDiscountPercentage: number;
 
-alcohol: number;
+    description: string;
 
-isNewCollection: boolean;
+    quantity: number;
 
-isBestSeller: boolean;
+    bottleCapacity: number;
 
-isSale: boolean;
+    alcohol: number;
 
-isWineTimePromotion: boolean;
+    isNewCollection: boolean;
 
-winemaking: string;
+    isBestSeller: boolean;
 
-grapeVarieties: string;
+    isSale: boolean;
 
-tastingNotes: string;
+    isWineTimePromotion: boolean;
 
-storeAndServeAdvices: string;
+    winemaking: string;
 
-foodPairing: string;
+    grapeVarieties: string;
 
-reviewsAndAwards: string;
+    tastingNotes: string;
 
-wineColor: string;
+    storeAndServeAdvices: string;
 
-sugarConsistency: string;
+    foodPairing: string;
 
-country: string;
+    reviewsAndAwards: string;
 
-region: string;
+    wineColor: string;
 
-evaluation: number;
+    sugarConsistency: string;
 
-comments: [];
+    country: string;
 
-bottlesSoldCounter: number;
+    region: string;
 
-imageUrl: string;
+    evaluation: number;
 
-},
+    comments: [];
 
-count: number
+    bottlesSoldCounter: number;
 
-}
+    imageUrl: string;
+
+    },
+
+    count: number
+
+    }[]
 
 ### 8 get productById
 
 GET /api/products/{productId}
 
-res: {productData}
+res:
+
+    { productData }
 
 ### 9 add favotiteProduct
 
 POST /api/favorites
 
-req: {
+req:
 
-productId: 24 symbols
+    {
 
-}
+    productId: 24 symbols
 
-res: string[]
+    }
+
+res:
+
+    string[]
 
 ### 10 delete favotiteProduct
 
 DELETE /api/favorites/:id
 
-res: string[]
+res:
+
+    string[]
 
 ### 11 get allFavorites
 
