@@ -42,6 +42,9 @@ const enum Messages {
   userNotFoundErr = 'User not found',
   isAlreadyFavoriteProductErr = 'Product is already in favorites list',
   productNotFoundErr = 'Product not found',
+  unexpectedProperty = 'An unexpected property was found in the object',
+  amountNumberErr = 'Amount field must be a number',
+  amountReqErr = 'Missing required amount field',
 }
 
 export default Messages;

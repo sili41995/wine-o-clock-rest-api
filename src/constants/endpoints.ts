@@ -4,6 +4,7 @@ const enum Endpoints {
   signin = '/signin',
   signout = '/signout',
   current = '/current',
+  amount = '/amount',
   restorePass = '/restore-password',
   dynamicRestorePassToken = 'restorePasswordToken',
   updatePass = `${restorePass}/:${dynamicRestorePassToken}`,

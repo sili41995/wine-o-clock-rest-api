@@ -4,13 +4,9 @@ import { FindFilters } from '../../constants';
 import { Product } from '../../models/product';
 import { ctrlWrapper, getFindFilter } from '../../utils';
 
-const getAll = async (
-  req: IRequest,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
+const getAll = async (req: IRequest, res: Response, next: NextFunction): Promise<void> => {
   const { skip, limit, findFilter } = getFindFilter(req.query);
-  const result = await Product.find(findFilter, FindFilters.eventFilter, {
+  const result = await Product.find(findFilter, FindFilters.generalFilter, {
     skip,
     limit,
   });

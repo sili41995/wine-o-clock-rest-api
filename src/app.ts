@@ -3,7 +3,7 @@ import logger from 'morgan';
 import cors from 'cors';
 import 'dotenv/config';
 import { IHttpError } from './types/types';
-import { authRouter, favoritesRouter, productsRouter } from './routes/api';
+import { authRouter, favoritesRouter, productsRouter, cartRouter } from './routes/api';
 
 const app = express();
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
@@ -15,6 +15,7 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/products', productsRouter);
 app.use('/api/favorites', favoritesRouter);
+app.use('/api/cart', cartRouter);
 
 app.use((req: Request, res: Response): void => {
   res.status(404).json({ message: 'Not Found' });

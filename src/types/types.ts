@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongoose';
+import { ObjectId, Schema } from 'mongoose';
 import { Request } from 'express';
 
 export interface IHttpError {
@@ -87,10 +87,21 @@ export interface IFindFilter {
   };
 }
 
-export interface IProductId {
+export interface IProductProps {
   productId: string;
+  amount: number;
 }
 
 export interface IFavoritesRequest extends IRequest {
-  body: IProductId;
+  body: IProductProps;
+}
+
+export interface ICartRequest extends IRequest {
+  body: IProductProps;
+}
+
+export interface ICart {
+  productId: Schema.Types.ObjectId;
+  amount: number;
+  owner: Schema.Types.ObjectId | undefined;
 }
