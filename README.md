@@ -1,6 +1,6 @@
 ### 1 signUp
 
-POST /api/auth/signup
+    POST /api/auth/signup
 
 req:
 
@@ -26,7 +26,7 @@ res:
 
 ### 2 signIn
 
-POST /api/auth/signin
+    POST /api/auth/signin
 
 req:
 
@@ -44,7 +44,7 @@ res:
 
 ### 3 signOut PRIVATE
 
-POST /api/auth/signout
+    POST /api/auth/signout
 
 JWT in header Authorization
 
@@ -58,7 +58,7 @@ res:
 
 ### 4 current PRIVATE
 
-GET /api/auth/current
+    GET /api/auth/current
 
 JWT in header Authorization
 
@@ -72,7 +72,7 @@ res:
 
 ### 5 restore password
 
-POST /api/auth/restore-password
+    POST /api/auth/restore-password
 
 req:
 
@@ -88,7 +88,7 @@ res:
 
 ### 6 update password
 
-PATCH /api/auth/restore-password/:restorePasswordToken
+    PATCH /api/auth/restore-password/:restorePasswordToken
 
 req:
 
@@ -106,7 +106,7 @@ res:
 
 ### 7 get allProducts
 
-GET /api/products
+    GET /api/products
 
 queries:
 
@@ -188,7 +188,7 @@ res:
 
 ### 8 get productById
 
-GET /api/products/{productId}
+    GET /api/products/{productId}
 
 res:
 
@@ -196,7 +196,7 @@ res:
 
 ### 9 add favotiteProduct
 
-POST /api/favorites
+    POST /api/favorites
 
 req:
 
@@ -212,7 +212,7 @@ res:
 
 ### 10 delete favotiteProduct
 
-DELETE /api/favorites/:id
+    DELETE /api/favorites/:id
 
 res:
 
@@ -220,7 +220,7 @@ res:
 
 ### 11 get allFavorites
 
-GET /api/favorites
+    GET /api/favorites
 
 res:
 
@@ -228,7 +228,7 @@ res:
 
 ### 12 get cart
 
-GET /api/cart
+    GET /api/cart
 
 res:
 
@@ -244,7 +244,7 @@ res:
 
 ### 13 add to cart
 
-POST /api/cart
+    POST /api/cart
 
 req:
 
@@ -268,7 +268,7 @@ res:
 
 ### 14 update product amount in cart
 
-PATCH /api/cart/amount/:id
+    PATCH /api/cart/amount/:id
 
 req:
 
@@ -292,7 +292,7 @@ res:
 
 ### 15 delete product in cart
 
-DELETE /api/cart/:id
+    DELETE /api/cart/:id
 
 res:
 
