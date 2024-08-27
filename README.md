@@ -98,7 +98,7 @@ res: {
 
 products: array of {
 
-_id: string;
+\_id: string;
 
 title: string;
 
@@ -185,3 +185,71 @@ res: string[]
 GET /api/favorites
 
 res: string[]
+
+### 12 get cart
+
+GET /api/cart
+
+res: {
+
+    id: string;
+
+    productId: string;
+
+    amount: number
+
+    }[]
+
+### 13 add to cart
+
+POST /api/cart
+
+req: {
+
+    productId: string;
+
+    }
+
+res: {
+
+    id: string;
+
+    productId: string;
+
+    amount: number
+
+    }
+
+### 14 update product amount in cart
+
+PATCH /api/cart/amount/:id
+
+req: {
+
+    amount: string;
+
+    }
+
+res: {
+
+    id: string;
+
+    productId: string;
+
+    amount: number
+
+    }
+
+### 15 delete product in cart
+
+DELETE /api/cart/:id
+
+res: {
+
+    id: string;
+
+    productId: string;
+
+    amount: number
+
+    }
