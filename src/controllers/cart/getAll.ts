@@ -1,8 +1,8 @@
 import { FindFilters } from '../../constants';
 import { Response, NextFunction } from 'express';
-import { Cart } from 'models/cart';
-import { IRequest } from 'types/types';
-import { ctrlWrapper, httpError } from 'utils';
+import { Cart } from '../../models/cart';
+import { IRequest } from '../../types/types';
+import { ctrlWrapper, httpError } from '../../utils';
 
 const getAll = async (req: IRequest, res: Response, next: NextFunction): Promise<void> => {
   if (!req.user) {

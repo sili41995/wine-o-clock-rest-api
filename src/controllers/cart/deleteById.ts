@@ -2,7 +2,7 @@ import { Response, NextFunction } from 'express';
 import { IRequest } from '../../types/types';
 import { ctrlWrapper, httpError } from '../../utils';
 import { Endpoints, FindFilters } from '../../constants';
-import { Cart } from 'models/cart';
+import { Cart } from '../../models/cart';
 
 const deleteById = async (req: IRequest, res: Response, next: NextFunction): Promise<void> => {
   if (!req.user) {

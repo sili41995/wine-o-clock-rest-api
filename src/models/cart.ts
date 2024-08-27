@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 import ModelNames from './modelNames';
-import { ICart } from 'types/types';
+import { ICart } from '../types/types';
 import { handleMongooseError, preUpdate } from './hooks';
 
 const cartSchema = new Schema<ICart>(
