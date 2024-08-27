@@ -252,6 +252,8 @@ req:
 
     productId: string;
 
+    amount: number | undefined = 1
+
     }
 
 res:
