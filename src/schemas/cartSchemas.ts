@@ -12,6 +12,7 @@ const amountSettings = Joi.number().messages({
 
 const add = Joi.object({
   productId: productIdSettings.required(),
+  amount: amountSettings,
 }).messages({
   'object.unknown': Messages.unexpectedProperty,
 });
