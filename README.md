@@ -190,7 +190,9 @@ res: string[]
 
 GET /api/cart
 
-res: {
+res:
+
+    {
 
     id: string;
 
@@ -204,13 +206,17 @@ res: {
 
 POST /api/cart
 
-req: {
+req:
+
+    {
 
     productId: string;
 
     }
 
-res: {
+res:
+
+    {
 
     id: string;
 
@@ -224,13 +230,17 @@ res: {
 
 PATCH /api/cart/amount/:id
 
-req: {
+req:
+
+    {
 
     amount: string;
 
     }
 
-res: {
+res:
+
+    {
 
     id: string;
 
@@ -244,7 +254,9 @@ res: {
 
 DELETE /api/cart/:id
 
-res: {
+res:
+
+    {
 
     id: string;
 
