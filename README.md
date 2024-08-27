@@ -184,7 +184,9 @@ res: string[]
 
 GET /api/favorites
 
-res: string[]
+res:
+
+    string[]
 
 ### 12 get cart
 
