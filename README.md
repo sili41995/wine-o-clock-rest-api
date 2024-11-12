@@ -276,7 +276,7 @@ req:
 
     {
 
-    amount: string;
+    amount: number;
 
     }
 
