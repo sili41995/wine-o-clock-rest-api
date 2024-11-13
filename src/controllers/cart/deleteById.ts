@@ -10,9 +10,9 @@ const deleteById = async (req: IRequest, res: Response, next: NextFunction): Pro
   }
 
   const { _id: owner } = req.user;
-  const _id = req.params[Endpoints.dynamicId];
+  const productId = req.params[Endpoints.dynamicId];
 
-  const result = await Cart.findOneAndDelete({ _id, owner }).select(FindFilters.generalFilter);
+  const result = await Cart.findOneAndDelete({ owner, productId }).select(FindFilters.generalFilter);
 
   if (!result) {
     throw httpError({ status: 404 });

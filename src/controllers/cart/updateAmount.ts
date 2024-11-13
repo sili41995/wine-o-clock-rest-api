@@ -10,9 +10,9 @@ const updateAmount = async (req: ICartRequest, res: Response, next: NextFunction
   }
 
   const { _id: owner } = req.user;
-  const _id = req.params[Endpoints.dynamicId];
+  const productId = req.params[Endpoints.dynamicId];
 
-  const result = await Cart.findOneAndUpdate({ _id, owner }, req.body).select(FindFilters.generalFilter);
+  const result = await Cart.findOneAndUpdate({ productId, owner }, req.body).select(FindFilters.generalFilter);
 
   if (!result) {
     throw httpError({ status: 404 });
